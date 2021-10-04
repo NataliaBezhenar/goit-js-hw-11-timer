@@ -1,0 +1,98 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font: 700 14px/1 'Red Hat Text', sans-serif;
+  /* background: #1b1924; */
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  background: #fff;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 15vh;
+  position: relative;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 19px 0 109px;
+  letter-spacing: 8px;
+  color: rgb(53, 52, 52);
+  text-transform: uppercase;
+}
+
+.timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.label {
+  color: #8486a9;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+
+.field:last-child {
+  margin-right: 0;
+}
+
+.value {
+  position: relative;
+  color: #60fbd9;
+  position: relative;
+  height: 140px;
+  width: 150px;
+  background-color: #33354d;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 5.5em;
+  overflow: hidden;
+  margin-bottom: 27px;
+  line-height: 138px;
+  -webkit-box-shadow: 0px 8px 0px 0px #16151d;
+          box-shadow: 0px 8px 0px 0px #16151d;
+}
+
+
+.animate__animated.animate__bounce {
+  --animate-duration: 1s;
+  --animate-repeat: 2;
+}
