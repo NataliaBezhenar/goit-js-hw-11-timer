@@ -5,7 +5,6 @@ const refs = {
   seconds: document.querySelector('span[data-value="secs"]'),
 };
 
-console.log(refs);
 class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
@@ -13,13 +12,12 @@ class CountdownTimer {
   }
 
   start() {
-    let lastDate = Date.now();
     const x = setInterval(() => {
       const dateNow = Date.now();
       const datesDiff = this.targetDate - dateNow;
       if (datesDiff < 0) {
         clearInterval(x);
-        document.getElementById("timer-1").innerHTML = "EXPIRED";
+        document.querySelector(this.selector).innerHTML = "EXPIRED";
       }
       const { days, hours, mins, secs } = getTimeComponents(datesDiff);
       updateClockFace({ days, hours, mins, secs }, refs);
@@ -29,13 +27,13 @@ class CountdownTimer {
 
 const ct = new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("Oct 22, 2021"),
+  targetDate: new Date("Oct 31, 2021"),
 });
 
 ct.start();
 
 function getTimeComponents(time) {
-  const days = Math.floor(time / (1000 * 60 * 60 * 24));
+  const days = padTime(Math.floor(time / (1000 * 60 * 60 * 24)));
   const hours = padTime(
     Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   );
@@ -54,3 +52,4 @@ const updateClockFace = ({ days, hours, mins, secs }, references) => {
   references.minutes.textContent = `${mins}`;
   references.seconds.textContent = `${secs}`;
 };
+
