@@ -36,18 +36,14 @@ class CountdownTimer {
   }
 
   getTimeComponents(time) {
-    console.log(time);
     const days = this.padTime(Math.floor(time / (1000 * 60 * 60 * 24)));
-    console.log("days", days);
     const hours = this.padTime(
       Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
     );
-    console.log("hours", hours);
     const mins = this.padTime(
       Math.floor((time % (1000 * 60 * 60)) / (1000 * 60))
     );
     const secs = this.padTime(Math.floor((time % (1000 * 60)) / 1000));
-    console.log({ days, hours, mins, secs });
     this.updateClockFace({ days, hours, mins, secs });
   }
 
